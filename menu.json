@@ -1,0 +1,56 @@
+{
+  "type":"menu",
+  "currency":"$",
+  "products":[
+    {
+      "id":1,
+      "price": 150,
+      "name": "sony"
+    },
+    {
+      "id":2,
+      "price": 100,
+      "name": "huawei"
+    },
+    {
+      "id":3,
+      "price": 200,
+      "name": "nokia"
+    },
+    {
+      "id":4,
+      "price": 300,
+      "name": "apple"
+    },
+    {
+      "id":5,
+      "price": 400,
+      "name": "panasonic"
+    },
+    {
+      "id":6,
+      "price": 450,
+      "name": "motorola"
+    },
+    {
+      "id":7,
+      "price": 500,
+      "name": "xiaomi"
+    },
+    {
+      "id":8,
+      "price": 600,
+      "name": "lenovo"
+    },
+    {
+      "id":9,
+      "price": 650,
+      "name": "alcatel"
+    },
+    {
+      "id":10,
+      "price": 700,
+      "name": "samsung"
+    }
+  ]
+}

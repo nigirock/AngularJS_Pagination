@@ -8,10 +8,27 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
 
-<body>
-
+<body ng-app="app" ng-controller="mainCtrl">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" ng-repeat="item in products">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Number - {{item.id}}</h3>
+                    <h4>{{item.name}}</h4>
+                    <h6>{{item.price | currency}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination-wrap">
+        <ul class="pagination">
+            <li ng-repeat="page in paginationList" ng-click="showPage(page.link)" ng-class="{'active': currentPageNum()==page.link}"><a ng-bind-html="page.name"></a></li>
+        </ul>
+    </div>
+</div>
 </body>
-<script src="js/app.js"></script>
 </html>

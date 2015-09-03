@@ -1,0 +1,18 @@
+
+.container {
+    margin-top: 20px;
+}
+.pagination {
+    display: inline-block;
+}
+.pagination:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+.pagination li {
+    cursor: pointer;
+}
+.pagination-wrap {
+    text-align: center;
+}
