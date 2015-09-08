@@ -7,5 +7,10 @@
     <orderEntry type="library" name="angular-notifications-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="angular2-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="angularjs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="jQuery UI-1.10.2" level="application" />
+    <orderEntry type="library" name="jQuery-2.0.0" level="application" />
+    <orderEntry type="library" name="jquery-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="jquery.colorpicker-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="jqueryui-DefinitelyTyped" level="application" />
   </component>
 </module>

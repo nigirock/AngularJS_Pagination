@@ -97,7 +97,8 @@ $http.get("menu.json")
     };
     $scope.singleItem = function(item){
         $scope.singleId = item.id-1;
-        $scope.hashName = item.name;
+        $scope.hashName = (item.name).replace(/\s+/g,'');
+        console.log($scope.hashName);
         $location.path("/singleItem");
         $location.hash($scope.singleId + $scope.hashName);
     };
