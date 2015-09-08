@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Mobile</title>
+    <base href="/AngularJS_Pagination/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="js/angular-route.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/directives.js"></script>
 </head>
 
 <body ng-app="app" ng-controller="mainCtrl">
-<div class="container">
-    <div class="row">
-        <div class="col-md-6" ng-repeat="item in products">
-            <div class="thumbnail">
-                <div class="caption">
-                    <h3>Number - {{item.id}}</h3>
-                    <h4>{{item.name}}</h4>
-                    <h6>{{item.price | currency}}</h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="pagination-wrap">
-        <ul class="pagination">
-            <li ng-repeat="page in paginationList" ng-click="showPage(page.link)" ng-class="{'active': currentPageNum()==page.link}"><a ng-bind-html="page.name"></a></li>
-        </ul>
-    </div>
-</div>
+<div ng-view></div>
 </body>
 </html>

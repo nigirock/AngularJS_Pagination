@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="well text-center">
+        <h2>Магазин мобильных телефонов</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12" ng-repeat="item in products">
+            <div class="thumbnail well">
+                <div class="caption">
+                    <h3>{{item.name}}</h3>
+                    <img ng-src={{item.photo}}>
+                    <h5>{{item.description}}</h5>
+                    <h4>{{item.price | currency}}</h4>
+                    <button class="btn btn-primary" ng-click="singleItem(item)">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination-wrap">
+        <ul class="pagination">
+            <li ng-repeat="page in paginationList" ng-click="showPage(page.link)" ng-class="{'active': currentPageNum()==page.link}"><a ng-bind-html="page.name"></a></li>
+        </ul>
+    </div>
+</div>

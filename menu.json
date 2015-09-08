@@ -2,55 +2,74 @@
   "type":"menu",
   "currency":"$",
   "products":[
-    {
-      "id":1,
+    { "id":1,
       "price": 150,
-      "name": "sony"
+      "name": "Lenovo P70-A",
+      "photo": "img/lenovoP70.jpg",
+      "description":"Android, экран 5' IPS (720x1280), ОЗУ 2 ГБ, флэш-память 16 ГБ, карты памяти, камера 13 Мп, аккумулятор 4000 мАч"
     },
     {
       "id":2,
       "price": 100,
-      "name": "huawei"
+      "name": "Sony Xperia Z3",
+      "photo": "img/SonyXperiaZ3.jpg",
+      "description": "Android, экран 4.6' IPS (720x1280), ОЗУ 2 ГБ, флэш-память 16 ГБ, карты памяти, камера 20.7 Мп, аккумулятор 2600 мАч"
     },
     {
       "id":3,
       "price": 200,
-      "name": "nokia"
+      "name": "Nokia Lumia 830",
+      "photo": "img/NokiaLumia830.jpg",
+      "description": "Windows Phone, экран 5' IPS (720x1280), ОЗУ 1 ГБ, флэш-память 16 ГБ, карты памяти, камера 10 Мп, аккумулятор 2200 мАч"
     },
     {
       "id":4,
       "price": 300,
-      "name": "apple"
+      "name": "Huawei Ascend P7",
+      "photo": "img/HuaweiAscendP7.jpg",
+      "description": "Android, экран 5' IPS (1080x1920), ОЗУ 2 ГБ, флэш-память 16 ГБ, карты памяти, камера 13 Мп, аккумулятор 2500 мАч"
     },
     {
       "id":5,
       "price": 400,
-      "name": "panasonic"
+      "name": "MEIZU M2 Note",
+      "photo": "img/MEIZU_M2_Note.jpg",
+      "description": "Android, экран 5.5' IPS (1080x1920), ОЗУ 2 ГБ, флэш-память 16 ГБ, карты памяти, камера 13 Мп, аккумулятор 3100 мАч"
     },
     {
       "id":6,
       "price": 450,
-      "name": "motorola"
+      "name": "Samsung Galaxy S6",
+      "photo": "img/SamsungGalaxyS6.jpg",
+      "description": "Android, экран 5.1' AMOLED (1440x2560), ОЗУ 3 ГБ, флэш-память 32 ГБ, камера 16 Мп, аккумулятор 2550 мАч"
     },
     {
       "id":7,
       "price": 500,
-      "name": "xiaomi"
+      "name": "Xiaomi Mi-4",
+      "photo": "img/XiaomiMi-4.jpg",
+      "description": "Android, экран 5' IPS (1080x1920), ОЗУ 3 ГБ, флэш-память 16 ГБ, камера 13 Мп, аккумулятор 3080 мАч"
     },
     {
       "id":8,
       "price": 600,
-      "name": "lenovo"
+      "name": "Apple iPhone 4s",
+      "photo": "img/iPhone4s.jpg",
+      "description": "Apple iOS, экран 3.5' IPS (640x960), ОЗУ 512 МБ, флэш-память 8 ГБ, камера 8 Мп, аккумулятор 1432 мАч"
     },
     {
       "id":9,
       "price": 650,
-      "name": "alcatel"
+      "name": "Samsung Galaxy S6 edge",
+      "photo": "img/SamsungGalaxyS6Edge.jpg",
+      "description": "Android, экран 5.1' AMOLED (1440x2560), ОЗУ 3 ГБ, флэш-память 32 ГБ, камера 16 Мп, аккумулятор 2600 мАч"
     },
     {
       "id":10,
       "price": 700,
-      "name": "samsung"
+      "name": "Huawei P8lite",
+      "photo": "img/HuaweiP8lite.jpg",
+      "description": "Android, экран 5' IPS (720x1280), ОЗУ 2 ГБ, флэш-память 16 ГБ, карты памяти, камера 13 Мп, аккумулятор 2200 мАч"
     }
   ]
 }

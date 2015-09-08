@@ -1,4 +1,18 @@
-var app = angular.module("app",[]);
+var app = angular.module("app",["ngResource","ngRoute"]);
+
+app.config(function($locationProvider,$routeProvider){
+    $locationProvider.html5Mode(true);
+        $routeProvider.when("/index.html",{
+            templateUrl:"/AngularJS_Pagination/table.html"
+        });
+        $routeProvider.when("/singleItem",{
+            templateUrl:"/AngularJS_Pagination/singleItem.html"
+        });
+        $routeProvider.otherwise({
+            templateUrl:"/AngularJS_Pagination/index.html"
+        })
+    });
+
 app.factory("pagination",function($sce){
     var currentPage = 0;
     var itemsPerPage = 3;
@@ -59,7 +73,8 @@ app.factory("pagination",function($sce){
         }
     }
 });
-app.controller("mainCtrl",function($scope,$http,pagination){
+
+app.controller("mainCtrl",function($scope,$http,pagination,$resource,$location){
 $http.get("menu.json")
     .success(function(data){
         $scope.menuObj = data;
@@ -67,6 +82,7 @@ $http.get("menu.json")
         $scope.products = pagination.getPageProducts();
         $scope.paginationList = pagination.getpaginationList();
     });
+
     $scope.showPage = function(page) {
         if ( page == 'prev' ) {
             $scope.products = pagination.getPrevPageProducts();
@@ -75,8 +91,19 @@ $http.get("menu.json")
         } else {
             $scope.products = pagination.getPageProducts( page );
         }
-    }
+    };
     $scope.currentPageNum = function() {
         return pagination.getCurrentPageNum();
+    };
+    $scope.singleItem = function(item){
+        $scope.singleId = item.id-1;
+        $scope.hashName = item.name;
+        $location.path("/singleItem");
+        $location.hash($scope.singleId + $scope.hashName);
+    };
+    $scope.allItem = function(){
+        $location.hash("");
+        $location.path("/index.html");
     }
+
 });
