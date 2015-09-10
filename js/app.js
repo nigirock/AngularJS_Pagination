@@ -15,11 +15,14 @@ app.config(function($locationProvider,$routeProvider){
 
 app.factory("pagination",function($sce){
     var currentPage = 0;
-    var itemsPerPage = 3;
+    var itemsPerPage = 4;
     var products = [];
     return{
         setProducts: function(newProducts){
             products = newProducts;
+        },
+        setPerPage: function(newItemPerPage){
+            itemsPerPage = newItemPerPage;
         },
         getPageProducts: function(num){
             var num = angular.isUndefined(num)?0:num;
@@ -32,7 +35,7 @@ app.factory("pagination",function($sce){
         getTotalPagesNum: function(){
             return Math.ceil(products.length/itemsPerPage);
         },
-        getpaginationList: function(){
+        getPaginationList: function(){
             var pagesNum = this.getTotalPagesNum();
             var paginationList = [];
             paginationList.push({
@@ -50,7 +53,7 @@ app.factory("pagination",function($sce){
                     name:$sce.trustAsHtml("&raquo;"),
                     link:"next"
                 });
-                if(pagesNum>1){
+                if(pagesNum > 1){
                     return paginationList;
                 }else{
                     return null;
@@ -70,6 +73,9 @@ app.factory("pagination",function($sce){
         },
         getCurrentPageNum:function(){
             return currentPage;
+        },
+        getPerPage:function(){
+            return itemsPerPage;
         }
     }
 });
@@ -78,9 +84,12 @@ app.controller("mainCtrl",function($scope,$http,pagination,$resource,$location){
 $http.get("menu.json")
     .success(function(data){
         $scope.menuObj = data;
+        $scope.itemPerPage = pagination.getPerPage();
         pagination.setProducts(data.products);
+        pagination.setPerPage($scope.itemPerPage);
         $scope.products = pagination.getPageProducts();
-        $scope.paginationList = pagination.getpaginationList();
+        $scope.paginationList = pagination.getPaginationList();
+        $scope.pageNum = pagination.getTotalPagesNum();
     });
 
     $scope.showPage = function(page) {
@@ -98,13 +107,20 @@ $http.get("menu.json")
     $scope.singleItem = function(item){
         $scope.singleId = item.id-1;
         $scope.hashName = (item.name).replace(/\s+/g,'');
-        console.log($scope.hashName);
         $location.path("/singleItem");
         $location.hash($scope.singleId + $scope.hashName);
     };
     $scope.allItem = function(){
         $location.hash("");
         $location.path("/index.html");
-    }
-
+    };
+    $scope.listItem = function(){
+        pagination.setPerPage($scope.itemPerPage);
+        $scope.classListItem = "col-md-12";
+    };
+    $scope.twoRowList = function(){
+        pagination.setPerPage($scope.itemPerPage);
+        $scope.classListItem = "col-md-6";
+        $scope.innerBlockDescr = "row-list";
+    };
 });
